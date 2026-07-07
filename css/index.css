@@ -92,9 +92,7 @@ main {
   padding-left: 0.5em;
 
   border-radius: 0.5em 1.5em;
-
   background-color: rgba(245, 245, 245, 0.75);
-
   box-shadow: 0 0 0.5em rgba(73, 72, 72, 0.8);
 }
 
@@ -201,15 +199,66 @@ footer > p {
 
 /*****************************/
 /* レスポンシブ対応           */
+/* mobile                    */
 /*****************************/
 @media screen and (max-width: 480px) {
+  body {
+    background-position: center;
+    background-attachment: scroll;
+  }
+
   h1 {
     font-size: 1.5em;
   }
+
   main {
-    margin-top: 6em;
+    margin-top: 5em;
+    padding: 0 1em;
   }
+
   .container {
-    width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.8em;
+    border-radius: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .sub_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em 0.5em;
+    align-items: start;
+  }
+
+  .item01,
+  .item02 {
+    width: 100%;
+    height: auto;
+    min-height: 9em;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .item01 img,
+  .item02 img {
+    width: 5.5em;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .item01 .img_fit {
+    width: auto;
+    height: 5.5em;
+  }
+
+  footer > p {
+    width: 100%;
+    margin-top: 1em;
+    font-size: 0.8em;
+    white-space: normal;
   }
 }
