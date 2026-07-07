@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 html {
-  /* ブラウザのデフォルトが16px                        */
-  /* デフォルトの16pxの代わりに1emが10pxになるように調整 */
+  /* ブラウザのデフォルトが16px */
+  /* 1emが10pxになるように調整 */
   font-size: 62.5%;
 }
 
@@ -13,14 +13,20 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   line-height: 1.5;
   color: rgb(73, 72, 72);
-  font-size: 1.6rem; /* 16px */
+  font-size: 1.6rem;
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", Meiryo, sans-serif;
   text-align: center;
-  background-image: url(../img/japan.jpg); /*★自分で画像を設定すること。*/
+
+  background-image: url(../img/manuel.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 header,
@@ -32,7 +38,7 @@ p,
 div,
 .container01,
 .filler01 {
-  margin: 0.2em 0em 0em 0em;
+  margin: 0.2em 0 0 0;
   padding: 0.1em;
 }
 
@@ -40,21 +46,26 @@ div,
 /* 見出し（みだし）           */
 /*****************************/
 header {
-  position: fixed; /*ヘッダーを固定（こてい）する*/
-  /* 基準（きじゅん）を画面（がめん）の左上（ひだりうえ）に */
-  top: 0em;
-  left: 0em;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: grey;
   z-index: 10;
 }
 
 h1 {
+  margin: 0;
   font: 2em Rajdhani, "Noto Sans JP";
-  color: rgb(181, 242, 252);
-  background: linear-gradient(135deg, #a80006, #ff4e50, #f9d423);
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    rgba(25, 45, 65, 0.95),
+    rgba(70, 105, 125, 0.9),
+    rgba(25, 45, 65, 0.95)
+  );
 }
 
 h2 {
@@ -68,22 +79,23 @@ h2 {
 /*****************************/
 main {
   z-index: 20;
-  margin-top: 3em;
-  overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
+  margin-top: 7em;
+  overflow: auto;
 }
 
 /*****************************/
-/* セクション(section)        */
+/* セクション                 */
 /*****************************/
 .container {
-  margin-top: 1em;
-  margin-right: auto;
-  margin-left: auto;
+  width: 72%;
+  margin: 0 auto;
   padding-left: 0.5em;
-  width: 80%;
+
   border-radius: 0.5em 1.5em;
-  background-color: rgba(245, 245, 245, 0.6);
-  box-shadow: 0 0 0.5em rgb(73, 72, 72);
+
+  background-color: rgba(245, 245, 245, 0.75);
+
+  box-shadow: 0 0 0.5em rgba(73, 72, 72, 0.8);
 }
 
 main > p {
@@ -99,9 +111,9 @@ a {
   text-decoration: none;
 }
 
-/* mouseoverでグレースケール */
+/* mouseover */
 a:hover {
-  opacity: 0.5;
+  opacity: 0.6;
   filter: grayscale(100%);
 }
 
@@ -175,24 +187,31 @@ a:hover {
 /* フッター                   */
 /*****************************/
 footer > p {
-  /*position: absolute;/*←絶対位置*/
-  /*bottom: 5px; /*下に固定*/
   position: relative;
   width: 100%;
-  margin: 0px;
+  margin-top: 0.5em;
   padding: 1px;
+
   color: whitesmoke;
   font: 1em Rajdhani;
   text-align: center;
-  background: rgba(1, 24, 31, 0.7);
+
+  background: rgba(25, 45, 65, 0.85);
 }
 
-/*******************************************************/
-/* レスポンシブ対応　メディアクエリを使ってCSSを切り替える */
-/* mobileのときのスタイル */
-/*******************************************************/
+/*****************************/
+/* レスポンシブ対応           */
+/*****************************/
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 1.5em;
+  }
+
+  main {
+    margin-top: 6em;
+  }
+
+  .container {
+    width: 90%;
   }
 }

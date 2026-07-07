@@ -17,7 +17,7 @@ body {
   line-height: normal; /*ブラウザが自動的に行間を決める*/
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", Meiryo, sans-serif;
-  background: url("../img/jijya2.jpg");
+  background: url("../img/temple1.jpg");
   background-size: cover;
   /*background-repeat: no-repeat;*/
   background-size: cover;
@@ -116,7 +116,7 @@ p {
   border-radius: 0.3em;
   color: whitesmoke;
   font-size: 1.5em;
-  background: rgb(253, 4, 79);
+  background: rgb(129, 84, 97);
   cursor: pointer; /*カーソルをポインターの形（かたち）にする*/
 }
 #btn99:hover {
@@ -132,7 +132,7 @@ p {
 
 header {
   margin-top: 20px;
-  color: rgba(252, 252, 252, 0.932);
+  color: rgba(116, 74, 74, 0.932);
   font-size: 39px;
   font-weight: bold;
   text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.65);
