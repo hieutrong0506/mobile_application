@@ -50,15 +50,10 @@ header {
   background-color: grey;
   z-index: 10;
 }
+
 h1 {
   font: 2em Rajdhani, "Noto Sans JP";
   color: rgb(181, 242, 252);
-  /* background-image: radial-gradient(
-    circle 248px at center,
-    #16d9e3 0%,
-    #30c7ec 47%,
-    #46aef7 100%
-  ); */
   background: linear-gradient(135deg, #a80006, #ff4e50, #f9d423);
 }
 
@@ -76,6 +71,7 @@ main {
   margin-top: 3em;
   overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
 }
+
 /*****************************/
 /* セクション(section)        */
 /*****************************/
@@ -89,6 +85,7 @@ main {
   background-color: rgba(245, 245, 245, 0.6);
   box-shadow: 0 0 0.5em rgb(73, 72, 72);
 }
+
 main > p {
   font: 1.2em bold;
 }
@@ -100,7 +97,6 @@ a {
   color: black;
   font-weight: 900;
   text-decoration: none;
-  /* https://developer.mozilla.org/ja/docs/Web/CSS/text-decoration */
 }
 
 /* mouseoverでグレースケール */
@@ -110,7 +106,7 @@ a:hover {
 }
 
 /*****************************/
-/* container  item           */
+/* container item            */
 /*****************************/
 .sub_container {
   display: flex;
@@ -151,17 +147,27 @@ a:hover {
   overflow: hidden;
 }
 
+/*****************************/
+/* アニメーション             */
+/*****************************/
 .fade-in {
-  animation: fadein 1.5s ease-out forwards;
+  animation: popUp 0.8s ease-out forwards;
 }
-@keyframes fadein {
+
+@keyframes popUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.8);
   }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.05);
+  }
+
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -180,15 +186,12 @@ footer > p {
   text-align: center;
   background: rgba(1, 24, 31, 0.7);
 }
+
 /*******************************************************/
 /* レスポンシブ対応　メディアクエリを使ってCSSを切り替える */
-/* https://www.design-memo.com/coding/css-media-queries */
 /* mobileのときのスタイル */
 /*******************************************************/
 @media screen and (max-width: 480px) {
-  /* body{
-        background-size: auto 900px;
-    } */
   h1 {
     font-size: 1.5em;
   }
